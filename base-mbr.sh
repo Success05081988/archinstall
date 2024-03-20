@@ -13,6 +13,7 @@ echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
+echo root:password
 
 pacman -S --noconfirm linux-lts-headers sof-firmware grub alsa-utils alsa-oss \
 alsa-firmware alsa-card-profiles alsa-plugins efibootmgr networkmanager \
@@ -49,6 +50,7 @@ systemctl enable acpid
 
 
 useradd -m virt
+echo virt:password
 echo "virt ALL=(ALL) ALL" >> /etc/sudoers.d/virt
 #usermod -c 'Orif Ismailov' virt
 
